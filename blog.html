@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multiple Buttons Counter</title>
+</head>
+<body>
+  <h2>Counter: <span id="display">0</span></h2>
+
+  <!-- অনেকগুলো button -->
+  <button class="myBtn">Button 1</button>
+  <button class="myBtn">Button 2</button>
+  <button class="myBtn">Button 3</button>
+  <button class="myBtn">Button 4</button>
+
+  <script>
+    let count = 0;
+    const display = document.getElementById("display");
+
+    // সব button select করছি (class দিয়ে)
+    const buttons = document.querySelectorAll(".myBtn");
+
+    // প্রতিটা button এর জন্য একই কাজ করবো
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        count++;
+        display.textContent = count;
+      });
+    });
+  </script>
+</body>
+</html>
+
