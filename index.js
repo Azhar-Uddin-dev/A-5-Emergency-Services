@@ -8,9 +8,18 @@
         display.textContent = count;
       });
     });
-
-
-      let balance = 100;
+    // copy button click event
+let copyCount = 0;
+    const copyDisplay = document.getElementById("copyDisplay");
+    const copyButtons = document.querySelectorAll(".copyBtn");
+    copyButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        copyCount++;
+        copyDisplay.textContent = copyCount;
+      });
+    });
+    // Call history
+    let balance = 100;
     const balanceDisplay = document.getElementById("coin");
     const buttons2 = document.querySelectorAll(".spendBtn");
     const historyList = document.getElementById("historyList");
@@ -25,10 +34,10 @@
         // Add to history
         const li = document.createElement("li");
         const now = new Date();
-        li.textContent = `${buttonName} clicked | Spent $20 | Remaining: ${balance} | ${now.toLocaleString()}`;
+        li.textContent = `${ alert("Calling" + buttonName)} ${buttonName}    ${now.toLocaleString()}`;
         historyList.appendChild(li);
       } else {
-        alert("❌ Not enough balance!");
+        alert("❌ পর্যাপ্ত পরিমাণ কয়েন নেই!");
       }
     }
 
